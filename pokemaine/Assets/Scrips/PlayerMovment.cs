@@ -17,6 +17,7 @@ public class PlayerMovment : MonoBehaviour
         //Inputs
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        //Debug.Log("X pos: " + transform.position);
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
