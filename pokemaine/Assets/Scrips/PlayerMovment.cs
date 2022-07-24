@@ -7,6 +7,8 @@ public class PlayerMovment : MonoBehaviour
 
     public float speed = 5f;
 
+    [SerializeField] private LayerMask water;
+
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -29,4 +31,6 @@ public class PlayerMovment : MonoBehaviour
         //Movement
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
+
+
 }

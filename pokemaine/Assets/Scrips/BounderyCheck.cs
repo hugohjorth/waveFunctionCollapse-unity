@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class BounderyCheck : MonoBehaviour
 {
+    public bool isWater;
 
-    public GameObject Player;
-    
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Debug.Log(collision);
+        if (collision.gameObject.layer == 8 && !isWater) isWater = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log(GetTile(Player.transform.position));
+        if (collision.gameObject.layer == 8 && isWater) isWater = false;
     }
 }
