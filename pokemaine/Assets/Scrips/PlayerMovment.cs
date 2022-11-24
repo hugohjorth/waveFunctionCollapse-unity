@@ -6,12 +6,9 @@ public class PlayerMovment : MonoBehaviour
 {
 
     public float speed = 5f;
-
-    [SerializeField] private LayerMask water;
-
     public Rigidbody2D rb;
     public Animator animator;
-
+    public bool isWater = false;
     Vector2 movement;
 
     void Update()
@@ -29,7 +26,7 @@ public class PlayerMovment : MonoBehaviour
     void FixedUpdate()
     {
         //Movement
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        if(!isWater) rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 
 
